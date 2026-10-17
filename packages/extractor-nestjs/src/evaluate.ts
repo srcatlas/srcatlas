@@ -41,6 +41,19 @@ export type Evaluated =
       enumName: string;
       member: string;
       value: string | number | undefined;
+      /** The package the enum is imported from, absent for an enum of the repository. */
+      module?: string;
+    })
+  /**
+   * `Owner.member` where `Owner` is a name imported from outside the repository and its types
+   * are not available (`Scope.REQUEST` with @nestjs/common not installed). Whether `Owner` is
+   * an enum is unknown, so callers check `module` and `owner`.
+   */
+  | (Base & {
+      kind: "externalMember";
+      module: string;
+      owner: string;
+      member: string;
     });
 
 export type Reason =
@@ -365,18 +378,36 @@ function evAccess(
   // Enum members, local or from a package, by the type checker's constant value.
   const member = node.getSymbol()?.getDeclarations()[0];
   if (member && Node.isEnumMember(member)) {
+    const receiver = node.getExpression();
+    const pkg = Node.isIdentifier(receiver)
+      ? originOf(receiver)?.module
+      : undefined;
     return {
       kind: "enum",
       enumName: member.getParent().getName(),
       member: member.getName(),
       value: member.getValue(),
+      ...(pkg ? { module: pkg } : {}),
       node,
     };
   }
 
   const target = ev(node.getExpression(), ctx, seen);
   if (target.kind === "unresolved") return target;
-  if (target.kind === "external") return bad(node, "external");
+  if (target.kind === "external") {
+    const name = Node.isPropertyAccessExpression(node)
+      ? node.getName()
+      : undefined;
+    return name
+      ? {
+          kind: "externalMember",
+          module: target.module,
+          owner: target.name,
+          member: name,
+          node,
+        }
+      : bad(node, "external");
+  }
   if (target.kind !== "object") return bad(node, "unsupported");
 
   let key: string | undefined;

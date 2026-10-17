@@ -58,6 +58,8 @@ function show(r: Result): unknown {
       return `external:${r.module}#${r.name}`;
     case "enum":
       return `enum:${r.enumName}.${r.member}=${r.value}`;
+    case "externalMember":
+      return `member:${r.module}#${r.owner}.${r.member}`;
     case "unresolved":
       return { unresolved: r.reason };
   }
@@ -107,6 +109,37 @@ describe("evaluate: literals, templates, concatenation", () => {
     expect(show(ev("('a' as string)"))).toBe("a");
     expect(show(ev("'a' satisfies string"))).toBe("a");
     expect(show(ev("({ a: 'x' } as const).a"))).toBe("x");
+  });
+});
+
+describe("evaluate: members of third-party names", () => {
+  const h = "import { Scope } from '@nestjs/common';";
+
+  it("Scope.REQUEST with the package not installed is a member of the imported name", () => {
+    expect(show(ev("Scope.REQUEST", h))).toBe(
+      "member:@nestjs/common#Scope.REQUEST",
+    );
+  });
+
+  it("with the package installed it is an enum member that remembers its package", () => {
+    const files = {
+      "/node_modules/@nestjs/common/index.d.ts":
+        "export declare enum Scope { DEFAULT = 0, TRANSIENT = 1, REQUEST = 2 }",
+    };
+    const r = ev("Scope.REQUEST", h, files);
+    expect(show(r)).toBe("enum:Scope.REQUEST=2");
+    expect(r.kind === "enum" && r.module).toBe("@nestjs/common");
+  });
+
+  it("a local enum has no package", () => {
+    const r = ev("E.A", "enum E { A }");
+    expect(r.kind === "enum" && r.module).toBeUndefined();
+  });
+
+  it("a member of a local object is still read from the object, not treated as third-party", () => {
+    expect(
+      show(ev("Scope.REQUEST", "const Scope = { REQUEST: 'r' } as const;")),
+    ).toBe("r");
   });
 });
 

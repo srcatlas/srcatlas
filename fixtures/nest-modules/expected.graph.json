@@ -177,6 +177,66 @@
         "root": ".",
         "version": "1.0.0"
       }
+    },
+    {
+      "id": "provider:mods/ClockService",
+      "kind": "provider",
+      "name": "ClockService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:mods",
+      "module": "module:mods/SpreadModule",
+      "source": {
+        "file": "src/spread/shared.services.ts",
+        "line": 6
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:mods/ConfigStore",
+      "kind": "provider",
+      "name": "ConfigStore",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:mods",
+      "module": "module:mods/AppConfigModule",
+      "source": {
+        "file": "src/config/config.store.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:mods/LoggerService",
+      "kind": "provider",
+      "name": "LoggerService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:mods",
+      "module": "module:mods/SpreadModule",
+      "source": {
+        "file": "src/spread/shared.services.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
     }
   ],
   "edges": [
@@ -187,6 +247,34 @@
       "sites": [
         {
           "file": "src/accounts/accounts.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:mods/AppConfigModule",
+      "kind": "contains",
+      "to": "provider:mods/ConfigStore",
+      "sites": [
+        {
+          "file": "src/config/app-config.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:mods/AppConfigModule",
+      "kind": "exports",
+      "to": "provider:mods/ConfigStore",
+      "sites": [
+        {
+          "file": "src/config/app-config.module.ts",
           "line": 5
         }
       ],
@@ -286,6 +374,34 @@
         {
           "file": "src/root.module.ts",
           "line": 17
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:mods/SpreadModule",
+      "kind": "contains",
+      "to": "provider:mods/ClockService",
+      "sites": [
+        {
+          "file": "src/spread/spread.module.ts",
+          "line": 10
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:mods/SpreadModule",
+      "kind": "contains",
+      "to": "provider:mods/LoggerService",
+      "sites": [
+        {
+          "file": "src/spread/spread.module.ts",
+          "line": 10
         }
       ],
       "extractor": "nestjs",

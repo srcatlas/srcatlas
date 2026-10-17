@@ -1,6 +1,9 @@
 {
   "schemaVersion": 1,
-  "generator": { "name": "srcatlas", "version": "0.0.0" },
+  "generator": {
+    "name": "srcatlas",
+    "version": "0.0.0"
+  },
   "repo": {},
   "nodes": [
     {
@@ -11,10 +14,16 @@
       "framework": "nestjs",
       "package": "package:api",
       "module": null,
-      "source": { "file": "src/app.module.ts", "line": 4 },
+      "source": {
+        "file": "src/app.module.ts",
+        "line": 4
+      },
       "extractor": "nestjs",
       "confidence": "certain",
-      "meta": { "dynamic": false, "global": false }
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
     },
     {
       "id": "module:api/OrdersModule",
@@ -24,10 +33,16 @@
       "framework": "nestjs",
       "package": "package:api",
       "module": null,
-      "source": { "file": "src/orders/orders.module.ts", "line": 6 },
+      "source": {
+        "file": "src/orders/orders.module.ts",
+        "line": 6
+      },
       "extractor": "nestjs",
       "confidence": "certain",
-      "meta": { "dynamic": false, "global": false }
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
     },
     {
       "id": "module:api/PrismaModule",
@@ -37,10 +52,16 @@
       "framework": "nestjs",
       "package": "package:api",
       "module": null,
-      "source": { "file": "src/prisma/prisma.module.ts", "line": 4 },
+      "source": {
+        "file": "src/prisma/prisma.module.ts",
+        "line": 4
+      },
       "extractor": "nestjs",
       "confidence": "certain",
-      "meta": { "dynamic": false, "global": false }
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
     },
     {
       "id": "package:api",
@@ -50,10 +71,56 @@
       "framework": "node",
       "package": "package:api",
       "module": null,
-      "source": { "file": "package.json", "line": 1 },
+      "source": {
+        "file": "package.json",
+        "line": 1
+      },
       "extractor": "core",
       "confidence": "certain",
-      "meta": { "root": ".", "version": "1.0.0" }
+      "meta": {
+        "root": ".",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "provider:api/OrdersService",
+      "kind": "provider",
+      "name": "OrdersService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:api",
+      "module": "module:api/OrdersModule",
+      "source": {
+        "file": "src/orders/orders.service.ts",
+        "line": 4
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:api/PrismaService",
+      "kind": "provider",
+      "name": "PrismaService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:api",
+      "module": "module:api/PrismaModule",
+      "source": {
+        "file": "src/prisma/prisma.service.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
     }
   ],
   "edges": [
@@ -61,7 +128,40 @@
       "from": "module:api/AppModule",
       "kind": "imports",
       "to": "module:api/OrdersModule",
-      "sites": [{ "file": "src/app.module.ts", "line": 5 }],
+      "sites": [
+        {
+          "file": "src/app.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:api/OrdersModule",
+      "kind": "contains",
+      "to": "provider:api/OrdersService",
+      "sites": [
+        {
+          "file": "src/orders/orders.module.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:api/OrdersModule",
+      "kind": "exports",
+      "to": "provider:api/OrdersService",
+      "sites": [
+        {
+          "file": "src/orders/orders.module.ts",
+          "line": 10
+        }
+      ],
       "extractor": "nestjs",
       "confidence": "certain",
       "meta": {}
@@ -70,7 +170,54 @@
       "from": "module:api/OrdersModule",
       "kind": "imports",
       "to": "module:api/PrismaModule",
-      "sites": [{ "file": "src/orders/orders.module.ts", "line": 7 }],
+      "sites": [
+        {
+          "file": "src/orders/orders.module.ts",
+          "line": 7
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:api/PrismaModule",
+      "kind": "contains",
+      "to": "provider:api/PrismaService",
+      "sites": [
+        {
+          "file": "src/prisma/prisma.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:api/PrismaModule",
+      "kind": "exports",
+      "to": "provider:api/PrismaService",
+      "sites": [
+        {
+          "file": "src/prisma/prisma.module.ts",
+          "line": 6
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:api/OrdersService",
+      "kind": "injects",
+      "to": "provider:api/PrismaService",
+      "sites": [
+        {
+          "file": "src/orders/orders.service.ts",
+          "line": 6
+        }
+      ],
       "extractor": "nestjs",
       "confidence": "certain",
       "meta": {}

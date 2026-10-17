@@ -114,3 +114,34 @@ export class A {}
     expect(out.summary).toEqual({ "nest.ignored-third-party-modules": 1 });
   });
 });
+
+describe("nestjs extractor: providers the golden files do not cover", () => {
+  const HEAD2 = "import { Module, Injectable } from '@nestjs/common';\n";
+
+  it("a provider that cannot be named gives a warning and no node", () => {
+    const out = run(`${HEAD2}
+declare function make(): unknown;
+@Module({ providers: [make(), { provide: make(), useValue: 1 }, { provide: 'X' }] })
+export class A {}
+`);
+    expect(out.nodes.filter((n) => n.kind === "provider")).toEqual([]);
+    expect(out.report.map((r) => [r.code, r.site?.line])).toEqual([
+      ["nest.unresolved-provider-token", 4],
+      ["nest.unresolved-provider-token", 4],
+      ["nest.unresolved-provider-token", 4],
+    ]);
+  });
+
+  it("a class does not inject itself, and a third-party provider has no node", () => {
+    const out = run(`${HEAD2}
+import { ConfigService } from '@nestjs/config';
+@Injectable() class S { constructor(private readonly self: S) {} }
+@Module({ providers: [S, ConfigService] })
+export class A {}
+`);
+    expect(
+      out.nodes.filter((n) => n.kind === "provider").map((n) => n.id),
+    ).toEqual(["provider:p/S"]);
+    expect(out.edges.filter((e) => e.kind === "injects")).toEqual([]);
+  });
+});

@@ -17,6 +17,15 @@ export {
 } from "./modules.js";
 export { isFromModule, type Origin, originOf } from "./origin.js";
 export {
+  type Injection,
+  isInjectable,
+  type Role,
+  readInjections,
+  roleOf,
+  type Scope,
+  scopeOf,
+} from "./providers.js";
+export {
   buildTokenTable,
   type ModuleRegistration,
   type ProviderRegistration,

@@ -50,3 +50,4 @@ Some things are noticed on purpose and not worth an entry each. They are counted
 | Key | Counts |
 |---|---|
 | `nest.ignored-third-party-modules` | Items of a NestJS `imports` array that are third-party modules (`ConfigModule.forRoot()`, `HttpModule`), which have no node in v1 (N-M9) |
+| `nest.ignored-third-party-injections` | Injections of a class imported from outside the repository that no provider of the package satisfies (section 3 step 5 of the NestJS extractor), which have no node in v1 |

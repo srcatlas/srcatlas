@@ -15,6 +15,7 @@ import {
   type ModuleInfo,
   readModules,
 } from "./modules.js";
+import { buildProviders } from "./provider-graph.js";
 
 const NAME = "nestjs";
 const DEPENDENCIES = ["dependencies", "devDependencies", "peerDependencies"];
@@ -130,14 +131,33 @@ function extract(ctx: ExtractorContext<Project>): ExtractorResult {
     });
   });
 
+  const importsOf = new Map<string, string[]>();
+  for (const e of edges) {
+    if (e.kind === "imports") {
+      importsOf.set(e.from, [...(importsOf.get(e.from) ?? []), e.to]);
+    }
+  }
+  const providers = buildProviders({
+    pkg,
+    project: ctx.project,
+    ctx,
+    modules,
+    moduleIds: ids,
+    importsOf,
+  });
+  nodes.push(...providers.nodes);
+  edges.push(...providers.edges);
+  report.push(...providers.report);
+
+  const summary: Record<string, number> = { ...providers.summary };
+  if (thirdParty > 0) summary["nest.ignored-third-party-modules"] = thirdParty;
+
   return {
     nodes,
     edges,
     facts: [],
     report,
-    ...(thirdParty > 0
-      ? { summary: { "nest.ignored-third-party-modules": thirdParty } }
-      : {}),
+    ...(Object.keys(summary).length > 0 ? { summary } : {}),
   };
 }
 

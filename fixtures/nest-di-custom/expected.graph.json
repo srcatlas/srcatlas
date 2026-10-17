@@ -1,0 +1,1261 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "name": "srcatlas",
+    "version": "0.0.0"
+  },
+  "repo": {},
+  "nodes": [
+    {
+      "id": "module:di/ClockModule",
+      "kind": "module",
+      "name": "ClockModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/clock/clock.module.ts",
+        "line": 4
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": true
+      }
+    },
+    {
+      "id": "module:di/DiRootModule",
+      "kind": "module",
+      "name": "DiRootModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/di-root.module.ts",
+        "line": 8
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:di/ExtrasModule",
+      "kind": "module",
+      "name": "ExtrasModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/kinds/extras.module.ts",
+        "line": 4
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:di/KindsModule",
+      "kind": "module",
+      "name": "KindsModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/kinds/kinds.module.ts",
+        "line": 18
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:di/ReportModule",
+      "kind": "module",
+      "name": "ReportModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/report/report.module.ts",
+        "line": 5
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:di/StoreModule",
+      "kind": "module",
+      "name": "StoreModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/store/store.module.ts",
+        "line": 11
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "package:di",
+      "kind": "package",
+      "name": "di",
+      "language": "typescript",
+      "framework": "node",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "package.json",
+        "line": 1
+      },
+      "extractor": "core",
+      "confidence": "certain",
+      "meta": {
+        "root": ".",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "provider:di/API_KEY",
+      "kind": "provider",
+      "name": "API_KEY",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/store.module.ts",
+        "line": 17
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/AuditService",
+      "kind": "provider",
+      "name": "AuditService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/audit.service.ts",
+        "line": 4
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/AuthGuard",
+      "kind": "provider",
+      "name": "AuthGuard",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 9
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "guard",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/ClockService",
+      "kind": "provider",
+      "name": "ClockService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/ClockModule",
+      "source": {
+        "file": "src/clock/clock.service.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/DB",
+      "kind": "provider",
+      "name": "DB",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/store.module.ts",
+        "line": 19
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "factory",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/ExplicitDefault",
+      "kind": "provider",
+      "name": "ExplicitDefault",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/scopes.ts",
+        "line": 14
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/HttpFilter",
+      "kind": "provider",
+      "name": "HttpFilter",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 30
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "filter",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/LEGACY_MAIL",
+      "kind": "provider",
+      "name": "LEGACY_MAIL",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/store.module.ts",
+        "line": 20
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "existing",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/LocalGuardish",
+      "kind": "provider",
+      "name": "LocalGuardish",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 43
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/LogInterceptor",
+      "kind": "provider",
+      "name": "LogInterceptor",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 16
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "interceptor",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/LooseService",
+      "kind": "provider",
+      "name": "LooseService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 54
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/Mailer",
+      "kind": "provider",
+      "name": "Mailer",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/mailer.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/ORDERS_REPO",
+      "kind": "provider",
+      "name": "ORDERS_REPO",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/store.module.ts",
+        "line": 16
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/PgOrdersRepo",
+      "kind": "provider",
+      "name": "PgOrdersRepo",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/store/orders-repo.ts",
+        "line": 8
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/PlainRegistered",
+      "kind": "provider",
+      "name": "PlainRegistered",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 36
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "other",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/ReportService",
+      "kind": "provider",
+      "name": "ReportService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/ReportModule",
+      "source": {
+        "file": "src/report/report.service.ts",
+        "line": 6
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/RequestContext",
+      "kind": "provider",
+      "name": "RequestContext",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/scopes.ts",
+        "line": 5
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "request"
+      }
+    },
+    {
+      "id": "provider:di/Settings",
+      "kind": "provider",
+      "name": "Settings",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/settings.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/SharedUtil",
+      "kind": "provider",
+      "name": "SharedUtil",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 50
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/SmtpMailer",
+      "kind": "provider",
+      "name": "SmtpMailer",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": null,
+      "source": {
+        "file": "src/store/mailer.ts",
+        "line": 7
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/StoreService",
+      "kind": "provider",
+      "name": "StoreService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/StoreModule",
+      "source": {
+        "file": "src/store/store.service.ts",
+        "line": 8
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/TransientThing",
+      "kind": "provider",
+      "name": "TransientThing",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/scopes.ts",
+        "line": 8
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "transient"
+      }
+    },
+    {
+      "id": "provider:di/UpperPipe",
+      "kind": "provider",
+      "name": "UpperPipe",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/roles.ts",
+        "line": 23
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "pipe",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:di/WeirdScope",
+      "kind": "provider",
+      "name": "WeirdScope",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:di",
+      "module": "module:di/KindsModule",
+      "source": {
+        "file": "src/kinds/scopes.ts",
+        "line": 11
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "module:di/ClockModule",
+      "kind": "contains",
+      "to": "provider:di/ClockService",
+      "sites": [
+        {
+          "file": "src/clock/clock.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/ClockModule",
+      "kind": "exports",
+      "to": "provider:di/ClockService",
+      "sites": [
+        {
+          "file": "src/clock/clock.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/DiRootModule",
+      "kind": "imports",
+      "to": "module:di/ClockModule",
+      "sites": [
+        {
+          "file": "src/di-root.module.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/DiRootModule",
+      "kind": "imports",
+      "to": "module:di/ExtrasModule",
+      "sites": [
+        {
+          "file": "src/di-root.module.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/DiRootModule",
+      "kind": "imports",
+      "to": "module:di/KindsModule",
+      "sites": [
+        {
+          "file": "src/di-root.module.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/DiRootModule",
+      "kind": "imports",
+      "to": "module:di/ReportModule",
+      "sites": [
+        {
+          "file": "src/di-root.module.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/DiRootModule",
+      "kind": "imports",
+      "to": "module:di/StoreModule",
+      "sites": [
+        {
+          "file": "src/di-root.module.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/ExtrasModule",
+      "kind": "contains",
+      "to": "provider:di/SharedUtil",
+      "sites": [
+        {
+          "file": "src/kinds/extras.module.ts",
+          "line": 4
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/AuthGuard",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 24
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/ExplicitDefault",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 23
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/HttpFilter",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 27
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/LocalGuardish",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 28
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/LogInterceptor",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 25
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/PlainRegistered",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 29
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/RequestContext",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 20
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/SharedUtil",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 30
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/TransientThing",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 21
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/UpperPipe",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 26
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/KindsModule",
+      "kind": "contains",
+      "to": "provider:di/WeirdScope",
+      "sites": [
+        {
+          "file": "src/kinds/kinds.module.ts",
+          "line": 22
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/ReportModule",
+      "kind": "contains",
+      "to": "provider:di/ReportService",
+      "sites": [
+        {
+          "file": "src/report/report.module.ts",
+          "line": 7
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/ReportModule",
+      "kind": "imports",
+      "to": "module:di/StoreModule",
+      "sites": [
+        {
+          "file": "src/report/report.module.ts",
+          "line": 6
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/API_KEY",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 17
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/AuditService",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 14
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/DB",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/LEGACY_MAIL",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 20
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/Mailer",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 18
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/ORDERS_REPO",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 16
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/Settings",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 15
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "contains",
+      "to": "provider:di/StoreService",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 13
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "exports",
+      "to": "provider:di/ORDERS_REPO",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 22
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:di/StoreModule",
+      "kind": "exports",
+      "to": "provider:di/StoreService",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 22
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/AuditService",
+      "kind": "injects",
+      "to": "provider:di/StoreService",
+      "sites": [
+        {
+          "file": "src/store/audit.service.ts",
+          "line": 7
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/DB",
+      "kind": "injects",
+      "to": "provider:di/API_KEY",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "tokens": ["API_KEY"]
+      }
+    },
+    {
+      "from": "provider:di/DB",
+      "kind": "injects",
+      "to": "provider:di/Settings",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/LEGACY_MAIL",
+      "kind": "injects",
+      "to": "provider:di/Mailer",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 20
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/Mailer",
+      "kind": "injects",
+      "to": "provider:di/SmtpMailer",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 18
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/ORDERS_REPO",
+      "kind": "injects",
+      "to": "provider:di/PgOrdersRepo",
+      "sites": [
+        {
+          "file": "src/store/store.module.ts",
+          "line": 16
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/ReportService",
+      "kind": "injects",
+      "to": "provider:di/AuditService",
+      "sites": [
+        {
+          "file": "src/report/report.service.ts",
+          "line": 11
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/ReportService",
+      "kind": "injects",
+      "to": "provider:di/ClockService",
+      "sites": [
+        {
+          "file": "src/report/report.service.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/ReportService",
+      "kind": "injects",
+      "to": "provider:di/StoreService",
+      "sites": [
+        {
+          "file": "src/report/report.service.ts",
+          "line": 8
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/StoreService",
+      "kind": "injects",
+      "to": "provider:di/API_KEY",
+      "sites": [
+        {
+          "file": "src/store/store.service.ts",
+          "line": 12
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "tokens": ["API_KEY"]
+      }
+    },
+    {
+      "from": "provider:di/StoreService",
+      "kind": "injects",
+      "to": "provider:di/AuditService",
+      "sites": [
+        {
+          "file": "src/store/store.service.ts",
+          "line": 15
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/StoreService",
+      "kind": "injects",
+      "to": "provider:di/Mailer",
+      "sites": [
+        {
+          "file": "src/store/store.service.ts",
+          "line": 13
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:di/StoreService",
+      "kind": "injects",
+      "to": "provider:di/ORDERS_REPO",
+      "sites": [
+        {
+          "file": "src/store/store.service.ts",
+          "line": 11
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "tokens": ["ORDERS_REPO"]
+      }
+    },
+    {
+      "from": "provider:di/StoreService",
+      "kind": "injects",
+      "to": "provider:di/Settings",
+      "sites": [
+        {
+          "file": "src/store/store.service.ts",
+          "line": 14
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    }
+  ]
+}

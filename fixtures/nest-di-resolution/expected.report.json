@@ -1,0 +1,39 @@
+{
+  "entries": [
+    {
+      "code": "nest.ambiguous-token",
+      "level": "warning",
+      "site": {
+        "file": "src/consumers.ts",
+        "line": 32
+      }
+    },
+    {
+      "code": "nest.unresolved-provider-token",
+      "level": "warning",
+      "site": {
+        "file": "src/consumers.ts",
+        "line": 43
+      }
+    },
+    {
+      "code": "nest.unresolved-provider-token",
+      "level": "warning",
+      "site": {
+        "file": "src/consumers.ts",
+        "line": 44
+      }
+    },
+    {
+      "code": "nest.unresolved-provider-token",
+      "level": "warning",
+      "site": {
+        "file": "src/consumers.ts",
+        "line": 45
+      }
+    }
+  ],
+  "summary": {
+    "nest.ignored-third-party-injections": 1
+  }
+}

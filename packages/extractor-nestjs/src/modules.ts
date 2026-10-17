@@ -45,7 +45,7 @@ export interface ModuleInfo {
 type ObjectResult = Extract<Result, { kind: "object" }>;
 type Callable = MethodDeclaration | FunctionDeclaration;
 
-function siteOf(node: Node, ctx: EvalContext): Site {
+export function siteOf(node: Node, ctx: EvalContext): Site {
   return {
     file: ctx.relative(node.getSourceFile().getFilePath()),
     line: node.getStartLineNumber(),

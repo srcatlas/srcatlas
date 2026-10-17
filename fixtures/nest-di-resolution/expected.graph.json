@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "name": "srcatlas",
+    "version": "0.0.0"
+  },
+  "repo": {},
+  "nodes": [
+    {
+      "id": "module:res/ConsumerModule",
+      "kind": "module",
+      "name": "ConsumerModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/consumer.module.ts",
+        "line": 18
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/DeepMidModule",
+      "kind": "module",
+      "name": "DeepMidModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 24
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/DeepSideModule",
+      "kind": "module",
+      "name": "DeepSideModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 20
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/FarModule",
+      "kind": "module",
+      "name": "FarModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 17
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/GlobalSideModule",
+      "kind": "module",
+      "name": "GlobalSideModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 12
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": true
+      }
+    },
+    {
+      "id": "module:res/ResRootModule",
+      "kind": "module",
+      "name": "ResRootModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/res-root.module.ts",
+        "line": 5
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/SideAModule",
+      "kind": "module",
+      "name": "SideAModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 6
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/SideBModule",
+      "kind": "module",
+      "name": "SideBModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 9
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "module:res/SideModule",
+      "kind": "module",
+      "name": "SideModule",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "dynamic": false,
+        "global": false
+      }
+    },
+    {
+      "id": "package:res",
+      "kind": "package",
+      "name": "res",
+      "language": "typescript",
+      "framework": "node",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "package.json",
+        "line": 1
+      },
+      "extractor": "core",
+      "confidence": "certain",
+      "meta": {
+        "root": ".",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "provider:res/TOKEN_DEEP",
+      "kind": "provider",
+      "name": "TOKEN_DEEP",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/DeepSideModule",
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 20
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/TOKEN_FAR",
+      "kind": "provider",
+      "name": "TOKEN_FAR",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/FarModule",
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 17
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/TOKEN_GLOBAL",
+      "kind": "provider",
+      "name": "TOKEN_GLOBAL",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/GlobalSideModule",
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 13
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/TOKEN_IMPORTED",
+      "kind": "provider",
+      "name": "TOKEN_IMPORTED",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/SideModule",
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/TOKEN_OWN",
+      "kind": "provider",
+      "name": "TOKEN_OWN",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumer.module.ts",
+        "line": 21
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/TOKEN_TWICE",
+      "kind": "provider",
+      "name": "TOKEN_TWICE",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": null,
+      "source": {
+        "file": "src/side.modules.ts",
+        "line": 6
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesDeep",
+      "kind": "provider",
+      "name": "UsesDeep",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 35
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesFar",
+      "kind": "provider",
+      "name": "UsesFar",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 25
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesGlobal",
+      "kind": "provider",
+      "name": "UsesGlobal",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 20
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesImported",
+      "kind": "provider",
+      "name": "UsesImported",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 15
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesMissing",
+      "kind": "provider",
+      "name": "UsesMissing",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 40
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesOwn",
+      "kind": "provider",
+      "name": "UsesOwn",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 10
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:res/UsesTwice",
+      "kind": "provider",
+      "name": "UsesTwice",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:res",
+      "module": "module:res/ConsumerModule",
+      "source": {
+        "file": "src/consumers.ts",
+        "line": 30
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_OWN",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 21
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesDeep",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 27
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesFar",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 25
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesGlobal",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 24
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesImported",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 23
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesMissing",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 28
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesOwn",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 22
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "contains",
+      "to": "provider:res/UsesTwice",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 26
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "imports",
+      "to": "module:res/DeepMidModule",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "imports",
+      "to": "module:res/SideAModule",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "imports",
+      "to": "module:res/SideBModule",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ConsumerModule",
+      "kind": "imports",
+      "to": "module:res/SideModule",
+      "sites": [
+        {
+          "file": "src/consumer.module.ts",
+          "line": 19
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/DeepMidModule",
+      "kind": "imports",
+      "to": "module:res/DeepSideModule",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 24
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/DeepSideModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_DEEP",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 20
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/FarModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_FAR",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 17
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/GlobalSideModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_GLOBAL",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 13
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ResRootModule",
+      "kind": "imports",
+      "to": "module:res/ConsumerModule",
+      "sites": [
+        {
+          "file": "src/res-root.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ResRootModule",
+      "kind": "imports",
+      "to": "module:res/FarModule",
+      "sites": [
+        {
+          "file": "src/res-root.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/ResRootModule",
+      "kind": "imports",
+      "to": "module:res/GlobalSideModule",
+      "sites": [
+        {
+          "file": "src/res-root.module.ts",
+          "line": 5
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/SideAModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_TWICE",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 6
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/SideBModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_TWICE",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:res/SideModule",
+      "kind": "contains",
+      "to": "provider:res/TOKEN_IMPORTED",
+      "sites": [
+        {
+          "file": "src/side.modules.ts",
+          "line": 3
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "provider:res/UsesDeep",
+      "kind": "injects",
+      "to": "provider:res/TOKEN_DEEP",
+      "sites": [
+        {
+          "file": "src/consumers.ts",
+          "line": 37
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "inferred",
+      "meta": {
+        "tokens": ["TOKEN_DEEP"]
+      }
+    },
+    {
+      "from": "provider:res/UsesFar",
+      "kind": "injects",
+      "to": "provider:res/TOKEN_FAR",
+      "sites": [
+        {
+          "file": "src/consumers.ts",
+          "line": 27
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "inferred",
+      "meta": {
+        "tokens": ["TOKEN_FAR"]
+      }
+    },
+    {
+      "from": "provider:res/UsesGlobal",
+      "kind": "injects",
+      "to": "provider:res/TOKEN_GLOBAL",
+      "sites": [
+        {
+          "file": "src/consumers.ts",
+          "line": 22
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "tokens": ["TOKEN_GLOBAL"]
+      }
+    },
+    {
+      "from": "provider:res/UsesImported",
+      "kind": "injects",
+      "to": "provider:res/TOKEN_IMPORTED",
+      "sites": [
+        {
+          "file": "src/consumers.ts",
+          "line": 17
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "tokens": ["TOKEN_IMPORTED"]
+      }
+    },
+    {
+      "from": "provider:res/UsesOwn",
+      "kind": "injects",
+      "to": "provider:res/TOKEN_OWN",
+      "sites": [
+        {
+          "file": "src/consumers.ts",
+          "line": 12
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "tokens": ["TOKEN_OWN"]
+      }
+    },
+    {
+      "from": "provider:res/UsesTwice",
+      "kind": "injects",
+      "to": "provider:res/TOKEN_TWICE",
+      "sites": [
+        {
+          "file": "src/consumers.ts",
+          "line": 32
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "inferred",
+      "meta": {
+        "tokens": ["TOKEN_TWICE"]
+      }
+    }
+  ]
+}

@@ -157,6 +157,66 @@
         "root": ".",
         "version": "1.0.0"
       }
+    },
+    {
+      "id": "provider:dyn/CACHE_TTL",
+      "kind": "provider",
+      "name": "CACHE_TTL",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:dyn",
+      "module": "module:dyn/CacheModule",
+      "source": {
+        "file": "src/cache/cache.module.ts",
+        "line": 10
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "value",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:dyn/CacheService",
+      "kind": "provider",
+      "name": "CacheService",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:dyn",
+      "module": "module:dyn/CacheModule",
+      "source": {
+        "file": "src/cache/cache.service.ts",
+        "line": 3
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "class",
+        "role": "service",
+        "scope": "default"
+      }
+    },
+    {
+      "id": "provider:dyn/QUEUE_OPTIONS",
+      "kind": "provider",
+      "name": "QUEUE_OPTIONS",
+      "language": "typescript",
+      "framework": "nestjs",
+      "package": "package:dyn",
+      "module": "module:dyn/QueueModule",
+      "source": {
+        "file": "src/queue/queue.module.ts",
+        "line": 16
+      },
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {
+        "providerType": "factory",
+        "role": "service",
+        "scope": "default"
+      }
     }
   ],
   "edges": [
@@ -168,6 +228,48 @@
         {
           "file": "src/audit/audit.module.ts",
           "line": 9
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:dyn/CacheModule",
+      "kind": "contains",
+      "to": "provider:dyn/CACHE_TTL",
+      "sites": [
+        {
+          "file": "src/cache/cache.module.ts",
+          "line": 10
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:dyn/CacheModule",
+      "kind": "contains",
+      "to": "provider:dyn/CacheService",
+      "sites": [
+        {
+          "file": "src/cache/cache.module.ts",
+          "line": 10
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:dyn/CacheModule",
+      "kind": "exports",
+      "to": "provider:dyn/CacheService",
+      "sites": [
+        {
+          "file": "src/cache/cache.module.ts",
+          "line": 11
         }
       ],
       "extractor": "nestjs",
@@ -224,6 +326,20 @@
         {
           "file": "src/root.module.ts",
           "line": 15
+        }
+      ],
+      "extractor": "nestjs",
+      "confidence": "certain",
+      "meta": {}
+    },
+    {
+      "from": "module:dyn/QueueModule",
+      "kind": "contains",
+      "to": "provider:dyn/QUEUE_OPTIONS",
+      "sites": [
+        {
+          "file": "src/queue/queue.module.ts",
+          "line": 16
         }
       ],
       "extractor": "nestjs",

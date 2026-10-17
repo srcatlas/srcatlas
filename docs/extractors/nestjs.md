@@ -607,10 +607,11 @@ Each fixture is a small, self-contained NestJS application under `fixtures/<name
 
 | Fixture | Patterns covered | Priority | Milestone |
 | --- | --- | --- | --- |
-| `nest-basic` | N-M1, N-P1, N-P2, N-R1, N-C1, N-C5 (with a minimal Prisma schema) | P0 | M1 |
+| `nest-basic` | N-M1, N-P1, N-P2, N-R1, N-C1, N-C5 (with a minimal Prisma schema; the provider patterns are in the golden file since #23) | P0 | M1 |
 | `nest-modules` | N-M2, N-M3, N-M4, N-M8, N-M9 | P0 | M1 |
 | `nest-dynamic` | N-M5, N-M6, N-M7 | P0 | M1 |
-| `nest-di-custom` | N-P3, N-P4, N-P5, N-P6, N-P7, N-P8, N-P11, token resolution order and ambiguity (section 3) | P0 | M1 |
+| `nest-di-custom` | N-P3, N-P4, N-P5, N-P6, N-P7, N-P8, N-P11, roles (N-P1) | P0 | M1 |
+| `nest-di-resolution` | Token resolution order, ambiguity and the three outcomes without a candidate (section 3) | P0 | M1 |
 | `nest-routing` | N-R2, N-R3, N-R4, N-R5, N-R8, N-R9, N-R10 | P0 | M1 |
 | `nest-versioning` | N-R6, N-R7 | P1 | M2 |
 | `nest-calls` | N-C2, N-C3, N-C4, N-P9 | P1 | M2 |
@@ -635,3 +636,7 @@ Record answers as decisions in `docs/adr/`.
 5. Section 2 and step 5 of section 3 tell a third-party class (`ConfigService`, a valid token with no node) from a third-party constant (not allowed). When the package is not installed, both are only a name imported from a module, so the evaluator returns a third-party reference for both; with the package's types available, a constant or function is `unresolved`. Decide whether a fixture without `node_modules` is enough, or whether the benchmark corpus must install dependencies.
 6. N-M5: a module class can have several static factories (`forRoot`, `forFeature`). It is one node, so the extractor takes the union: `dynamic` is true if any static method qualifies, `global` is true if the decorator or any returned literal says so, and the registrations of all of them are merged. A call to a factory that does not qualify is unresolved at the call site. Check this against real repositories whose factories differ in `global`.
 7. N-M5: a static method qualifies when it has exactly one `return` (nested functions ignored) whose value is an object literal with `module:` naming the same class, written there, held by a `const` in the function, or returned by a helper function of the repository at most two calls away. A literal naming a different class is unresolved. A plain repository function used directly in `imports` (`imports: [makeModule()]`) is not followed and is reported as N-M7; only `Class.method()` is.
+8. N-P4: a token node has no `meta.token` (the node name is the token). A string token is named by its value, so `const OPTIONS = 'QUEUE_OPTIONS'` gives `provider:api/QUEUE_OPTIONS`; a symbol by its constant. A class that is only the target of `useClass` gets its own node with `module = null` and is not reported as unregistered. When a class is also the token of a custom provider, `providerType` comes from the custom entry (first by site), the role from the class if it is `@Injectable`, else `service`.
+9. N-P4: `useClass` edges go straight to the class; `inject: [...]` and `useExisting` go through section 3 from the registering module. An `inject` value that cannot be evaluated as an array produces nothing and no report. A provider element that cannot be named (no `provide`, an unevaluable token, none or several of `useValue`/`useClass`/`useFactory`/`useExisting`) gives `nest.unresolved-provider-token`. A `scope` key inside a custom provider object is not read.
+10. Section 3 when a class is registered by several modules (or only reached through `useClass`): the token is resolved from each registering module and the answers are combined; they are certain only if all agree, otherwise inferred with `nest.ambiguous-token` when they differ. Decide whether that is the right reading of "the injecting class's own module".
+11. N-P8: `Scope.DEFAULT` is accepted without a report.

@@ -1,0 +1,21 @@
+{
+  "entries": [
+    {
+      "code": "nest.unregistered-provider",
+      "level": "info",
+      "site": {
+        "file": "src/kinds/roles.ts",
+        "line": 54
+      }
+    },
+    {
+      "code": "nest.unresolved-scope",
+      "level": "info",
+      "site": {
+        "file": "src/kinds/scopes.ts",
+        "line": 11
+      }
+    }
+  ],
+  "summary": {}
+}

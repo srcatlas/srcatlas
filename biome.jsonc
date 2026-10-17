@@ -34,9 +34,19 @@
       "linter": { "rules": { "style": { "noNonNullAssertion": "off" } } }
     },
     {
-      // Fixtures copy real NestJS code, where dynamic modules are classes with only static methods.
+      // Fixtures copy real NestJS code: parameter decorators, constructor-injected members that are
+      // never read, and dynamic modules that are classes with only static methods.
       "includes": ["fixtures/**"],
-      "linter": { "rules": { "complexity": { "noStaticOnlyClass": "off" } } }
+      "javascript": { "parser": { "unsafeParameterDecoratorsEnabled": true } },
+      "linter": {
+        "rules": {
+          "complexity": { "noStaticOnlyClass": "off" },
+          "correctness": {
+            "noUnusedFunctionParameters": "off",
+            "noUnusedPrivateClassMembers": "off"
+          }
+        }
+      }
     }
   ],
   "javascript": { "formatter": { "quoteStyle": "double" } },
